@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+           <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <meta charset="UTF-8">
+        <title>The Odin Project - Library (iKeron X) </title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name=”description” content=”The Odin Project - Library”> 
+        <meta name=”keywords” content=”The Odin Project, Library, iKeron X, Keron Williams”>
+        <meta name=”author” content=”iKeronX”>
+
+          <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+          <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <link
+        href="//fonts.googleapis.com/css?family=Raleway:400,300,600"
+        rel="stylesheet"
+        type="text/css"/>
+
+      <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/normalize.css" rel="stylesheet">
+        <link href="css/skeleton.css" rel="stylesheet">
+
+        <!-- SCRIPT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <script src="script.js" defer></script>
+    </head>
+<body>
+      <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div class="container">
+        <div class="row">
+        <div class="twelve column" style="margin-top: %;">
+            <h1><center>My book library</center></h1>
+        </div>
+        </div><br>
+        <div class ='row'>
+            <button id='show-modal' class="button-primary add-book-button"><center>Add Book</center>
+            </button>
+        </div><br><br>
+        <div class ='modal modal--hidden'>
+            <div class ='modal__contents'>
+                <div class ='modal__close-bar'>
+                    <span>X</span>
+                </div>
+                <p class ='modal__header'><h5>Add new book</h5></p>
+                <form id='add-book-form'> 
+                    <div class="row">
+                        <input type="text" class="u-full-width input-field" id="title" placeholder= 'Title' required/>
+                    </div><br>
+                    <div class="row">
+                        <input type="text" class="u-full-width" id="author"  placeholder= 'Author' required/>
+                    </div><br> 
+                    <div class="row">
+                        <input type="number" class="u-full-width" id="pages" placeholder= 'Pages #' min="0" max="5000" step='' required/> 
+                    </div><br>
+                        <div class="row">
+                            <select name='read' id='read' class='u-full-width'>
+                                <option value='read' >Read</option>
+                                <option value='not read'>Not read</option>
+                            </select> 
+                        </div><br>
+                        <div class="row">
+                            <input type='submit' value='submit' class='button-primary sub-button'/> 
+                        </div>
+                </form> 
+            </div>
+        </div> 
+        <div class='row'>
+            <div class='twelve columns'>
+                <table class='twelve columns'>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Pages</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                    <tbody id='book-table-body'></tbody>
+                </table>
+            </div> 
+        </div>
+    </div>
+      <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
+
+
+
+

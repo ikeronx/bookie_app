@@ -1,0 +1,77 @@
+*, *:before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: rgb(192, 183, 169);
+}
+
+body {
+  background: rgb(19, 20, 21);
+}
+
+.status-button{
+  color: rgb(192, 183, 169);
+  background: rgba(43, 43, 43, 0.144);
+  border-color: rgba(141, 140, 140, 0.479);
+}
+
+.delete{
+  color: rgb(192, 183, 169);
+  background: rgba(141, 4, 56, 0.103);
+  border-color: rgba(141, 38, 20, 0.493);
+}
+
+.add-book-button{
+  position: absolute; 
+  /* align the modal container to center of the page */
+  top: 130px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* MODAL */
+
+ .modal{ 
+  background: rgba(255, 255, 255, 0.);
+  position: absolute; 
+  /* align the modal container to center of the page */
+  top: 140px;
+  height: 100%;
+  width: 100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+} 
+
+.modal--hidden{
+        display: none;
+    } 
+
+/* model content styling */
+.modal__contents{
+  background: rgba(39, 42, 43, 0.993);
+  padding: 2rem 4rem;
+  border-radius: 1rem;
+}
+
+.modal__close-bar{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: -2rem;
+  margin-top: -1rem;
+  cursor: pointer;
+  }
+
+.input-field{
+    width: 100%;
+    transition: all .3s ease;
+    color: rgb(192, 183, 169);
+    font-size: 1.9rem;
+}
+
+.sub-button{
+  width: 100%;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
