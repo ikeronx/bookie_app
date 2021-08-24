@@ -3,15 +3,19 @@ const $author = document.getElementById('author')
 const $pages = document.getElementById('pages')
 const $read = document.getElementById('read')
 const $submit = document.getElementById('submit')
-const $tableBody = document.querySelector("#book-table-body");
-const $form = document.getElementById('add-book-form').addEventListener("submit", (e) => {
-    //modal submit book event 
+const backgroundFade = document.getElementById('overlay-back')
+const $form = document.getElementById('form-submit-book').addEventListener("submit", (e) => {
     e.preventDefault()
     addBookToLibrary()
     render()
     clearForm()
     toggleModal()
+    backgroundFadeOff()
 })
+
+window.addEventListener('DOMContentLoaded', () => {
+  render();
+});
 
 //book class: represents a book
 class Book {
@@ -23,72 +27,172 @@ class Book {
     }
 }
 
-//creates book from Book Constructor, adds to library
+//creates default books from Book Constructor, adds to library
 let myLibrary = [
-    { title: "Dark Matter", author: "Blake Crouch", pages: 342, read: 'read' },
-    {
-    title: `Words of Radiance
-    (The Stormlight Archive #2)`,
-    author: "Brandon Sanderson",
-    pages: 244,
-    read: 'not read',
-    },
-    { title: `The Stone Sky
-    (The Broken Earth #3)`, author: "N.K. Jemisin", pages: 153, read: 'not read' },
+  { title: 'The Fifth Season', author: 'N.K. Jemisin', read: "read", pages: 419 },
+  {
+    title: "Dark Matter",
+    author: "Blake Crouch",
+    read: "read",
+    pages: 342,
+  },
+  { title: 'Nineteen Eighty-Four', author: 'Geroge Orwell', read: 'read', pages: 328 },
+  { title: 'A Brief History Of Seven Killings', author: 'Marlon James', read: 'not read', pages: 609},
 ];
 
 //adds a new book to myLibrary
 function addBookToLibrary() {
     let newBook
     newBook = new Book($title.value, $author.value, $pages.value, $read.value)
-    myLibrary.push(newBook) 
+    myLibrary.push(newBook)
 }
 
 //clears form after book submission
 function clearForm() {
-    $title.value = ""
-    $author.value = ""
-    $pages.value = ""
-  }
-
-// displays the new book  
+    $title.value = ''
+    $author.value = ''
+    $pages.value = ''
+}
+  
+//Creates book visual in browser
 function render() {
-    // checkLocalStorage();
-    $tableBody.textContent = ""
-    myLibrary.forEach((book) => {
-      const htmlBook = `
-        <tr>
-          <td>${book.title}</td>
-          <td>${book.author}</td>
-          <td>${book.pages}</td>
-          <td><button class="status-button">${book.read}</button></td>
-          <td><button class="delete">delete</button></td>
-        </tr>
-        `;
-      $tableBody.insertAdjacentHTML("afterbegin", htmlBook);
-    });
-  }
-render();
+  const display = document.getElementById('bookShelf')
+  const books = document.querySelectorAll('.book')
+  books.forEach(book => display.removeChild(book))
 
-// modal toggle function
-const toggleModal = () => {
-    document.querySelector('.modal')
-    .classList.toggle('modal--hidden')
+  for (let i = 0; i < myLibrary.length; i++) {
+      createBook(myLibrary[i])
+  }
+}
+  
+//creates book DOM elements, to use in render() which displays each book info on a card UI
+function createBook(item) {
+  const bookShelf = document.querySelector('#bookShelf')
+  const bookDiv = document.createElement('div')
+  const titleDiv = document.createElement('div')
+  const authDiv = document.createElement('div')
+  const pageDiv = document.createElement('div')
+  const removeBtn = document.createElement('button')
+  const readBtn = document.createElement('button')
+
+  bookDiv.classList.add('book')
+  bookDiv.setAttribute('id', myLibrary.indexOf(item))
+
+  titleDiv.textContent = item.title
+  titleDiv.classList.add('title')
+  bookDiv.appendChild(titleDiv)
+
+  authDiv.textContent = item.author
+  authDiv.classList.add('author')
+  bookDiv.appendChild(authDiv)
+
+  pageDiv.textContent = item.pages
+  pageDiv.classList.add('pages')
+  bookDiv.appendChild(pageDiv)
+
+  pageDiv.textContent = item.pages + ' pages'
+  pageDiv.classList.add('pages')
+  bookDiv.appendChild(pageDiv)
+
+  readBtn.classList.add('readBtn', 'button-primary', 'u-full-width')
+  readBtn.style.cssText = `color: rgb(192, 183, 169);`
+  bookDiv.appendChild(readBtn)
+  if (item.read === true) {
+    readBtn.textContent = 'read'
+  } if (item.read === false) {
+    readBtn.textContent = 'not read'
+    readBtn.style.cssText = `
+    color: rgb(192, 183, 169);
+    border-color: rgba(141, 4, 56, 1.103);
+    background: rgba(141, 38, 20, 0.493);
+    `
+  }  if (item.read === 'read') {
+    readBtn.textContent = 'read'
+  } if (item.read === 'not read') {
+    readBtn.textContent = 'not read'
+    readBtn.style.cssText = `
+      color: rgb(192, 183, 169);
+      border-color: rgba(141, 4, 56, 1.103);
+      background: rgba(141, 38, 20, 0.493);
+      `
+  }
+
+  removeBtn.textContent = 'remove'
+  removeBtn.setAttribute('id', 'removeBtn')
+  removeBtn.classList.add('button-primary', 'u-full-width', 'remove-button')
+  removeBtn.style.cssText = `
+    color: rgb(192, 183, 169);
+    background: rgba(141, 4, 56, 0.103);
+    border-color: rgba(141, 38, 20, 0.493);
+    `
+  bookDiv.appendChild(removeBtn)
+
+  bookShelf.appendChild(bookDiv)
+
+  //add toggle ability to each book 'read' button on click
+  removeBtn.addEventListener('click', () => {
+      myLibrary.splice(myLibrary.indexOf(item), 1)
+      // setData()
+      render()
+  })
+
+  //add toggle ability to each book 'read' button on click
+  readBtn.addEventListener('click', () => {
+      item.read = !item.read
+      // setData()
+      render()
+  })
 }
 
-    //event listener to toggle modal on 
-    document.querySelector('#show-modal')
-        .addEventListener('click', toggleModal)
+// modal popup toggle function
+const toggleModal = () => {
+    document.querySelector('.modal')
+      .classList.toggle('modal--hidden')
+}
 
-    //modal close bar
-    document.querySelector('.modal__close-bar span')
-        .addEventListener('click', toggleModal)
+//event listener to toggle modal on and fade background
+let showModal = () => {
+  document.querySelector('#show-modal-add-book-btn')
+    .addEventListener('click', toggleModal)
+  
+  document.querySelector('#show-modal-add-book-btn')
+    .addEventListener('click', () => {
+      backgroundFadeOn()
+    })
+}
+showModal()
+
+//hides modal & turns off background fade
+let hideModal = () => {
+  document.querySelector('.modal__close-bar span')
+    .addEventListener('click', toggleModal)
+
+  document.querySelector('.modal__close-bar span')
+    .addEventListener('click', () => {
+      backgroundFadeOff()
+    })
+}
+hideModal()
+
+// turns background fade on 
+function backgroundFadeOn() {
+  backgroundFade.style.display = 'block'
+  backgroundFade.style.transition = 'background-color 2s'
+}
+
+//turns background fade off
+let backgroundFadeOff = () => {
+  backgroundFade.style.display = 'none'
+  backgroundFade.style.transition = 'none'
+}
+        
 
 
 
 
 
 
+        
 
     // //saving to local storage
-    // // localStorage.setItem('MyBookShelf', JSON.stringify(myLibrary))
+    // // localStorage.setItem('M', JSON.stringify(myLibrary))

@@ -34,14 +34,14 @@
 <body>
       <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <div class="container">
-        <div class="row">
-        <div class="twelve column" style="margin-top: %;">
-            <h1><center>My book library</center></h1>
+    <div class="container ">
+        <div class="row header-bg">
+        <div class="twelve column" style="margin-top: 2%;">
+            <h1><center>My Odin Library</center></h1>
         </div>
         </div><br>
         <div class ='row'>
-            <button id='show-modal' class="button-primary add-book-button"><center>Add Book</center>
+            <button id='show-modal-add-book-btn' class="button-primary add-book-button"><center>Add Book</center>
             </button>
         </div><br><br>
         <div class ='modal modal--hidden'>
@@ -50,7 +50,7 @@
                     <span>X</span>
                 </div>
                 <p class ='modal__header'><h5>Add new book</h5></p>
-                <form id='add-book-form'> 
+                <form id='form-submit-book'> 
                     <div class="row">
                         <input type="text" class="u-full-width input-field" id="title" placeholder= 'Title' required/>
                     </div><br>
@@ -73,25 +73,13 @@
             </div>
         </div> 
         <div class='row'>
-            <div class='twelve columns'>
-                <table class='twelve columns'>
-                    <tr>
-                        <th>Title</th>
-                        <th>Author</th>
-                        <th>Pages</th>
-                        <th>Status</th>
-                        <th></th>
-                    </tr>
-                    <tbody id='book-table-body'></tbody>
-                </table>
-            </div> 
+            <div id='overlay-back'></div>
+                <div id='bookShelf'></div>
         </div>
     </div>
       <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
 </html>
-
-
 
 
