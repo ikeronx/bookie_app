@@ -19,7 +19,6 @@ body {
   transform: translate(-50%, -50%);
 }
 
-
 /* MODAL POP UP*/
 
 .modal {
@@ -35,16 +34,15 @@ body {
   z-index: 2;
 }
 
-.modal--hidden {
-  display: none;
-}
-
-/* model content styling */
 .modal__contents {
   background: rgba(39, 42, 43, 0.993);
   padding: 2rem 4rem;
   border-radius: 1rem;
   text-align: center;
+}
+
+.modal--hidden {
+  display: none;
 }
 
 .modal__close-bar {
@@ -53,13 +51,12 @@ body {
   margin-right: -2rem;
   margin-top: -1rem;
   cursor: pointer;
-}
+}3
 
 .sub-button {
   width: 100%;
   cursor: pointer;
   transition: all 0.3s ease;
-  
 }
 
 .input-field {
@@ -98,7 +95,7 @@ body {
 
 .title{
   font-size: 1.9rem;
-  /* font-weight: bold; */
+  font-weight: bold; 
 }
 
 .author{
@@ -108,6 +105,8 @@ body {
 .pages{
   font-size: .9rem;
 }
+
+/*background fade*/
 
 #overlay-back {
   position: fixed;
@@ -119,8 +118,8 @@ body {
   background: rgb(15, 15, 15);
   opacity: 0.8;
   filter: alpha(opacity=60);
-  z-index: 1;
   display: none;
+  z-index: 1;
   visibility: visible;
   transition: background-color 1s;
 }

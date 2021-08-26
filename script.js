@@ -4,13 +4,13 @@ const $pages = document.getElementById('pages')
 const $read = document.getElementById('read')
 const $submit = document.getElementById('submit')
 const backgroundFade = document.getElementById('overlay-back')
-const $form = document.getElementById('form-submit-book').addEventListener("submit", (e) => {
+const $form = document.getElementById('modal-popup').addEventListener("submit", (e) => {
     e.preventDefault()
     addBookToLibrary()
     render()
     clearForm()
     toggleModal()
-    backgroundFadeOff()
+    hideBackgroundFade()
 })
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -45,6 +45,10 @@ function addBookToLibrary() {
     let newBook
     newBook = new Book($title.value, $author.value, $pages.value, $read.value)
     myLibrary.push(newBook)
+
+
+  setData()
+
 }
 
 //clears form after book submission
@@ -116,7 +120,7 @@ function createBook(item) {
       background: rgba(141, 38, 20, 0.493);
       `
   }
-
+  
   removeBtn.textContent = 'remove'
   removeBtn.setAttribute('id', 'removeBtn')
   removeBtn.classList.add('button-primary', 'u-full-width', 'remove-button')
@@ -132,14 +136,14 @@ function createBook(item) {
   //add toggle ability to each book 'read' button on click
   removeBtn.addEventListener('click', () => {
       myLibrary.splice(myLibrary.indexOf(item), 1)
-      // setData()
+      setData();  //saves updated array in local storage
       render()
   })
 
   //add toggle ability to each book 'read' button on click
   readBtn.addEventListener('click', () => {
       item.read = !item.read
-      // setData()
+      setData();  //saves updated array in local storage
       render()
   })
 }
@@ -157,7 +161,7 @@ let showModal = () => {
   
   document.querySelector('#show-modal-add-book-btn')
     .addEventListener('click', () => {
-      backgroundFadeOn()
+      showBackgroundFade()
     })
 }
 showModal()
@@ -169,30 +173,37 @@ let hideModal = () => {
 
   document.querySelector('.modal__close-bar span')
     .addEventListener('click', () => {
-      backgroundFadeOff()
+      hideBackgroundFade()
     })
 }
 hideModal()
 
 // turns background fade on 
-function backgroundFadeOn() {
+function showBackgroundFade() {
   backgroundFade.style.display = 'block'
   backgroundFade.style.transition = 'background-color 2s'
 }
 
 //turns background fade off
-let backgroundFadeOff = () => {
+let hideBackgroundFade = () => {
   backgroundFade.style.display = 'none'
   backgroundFade.style.transition = 'none'
 }
-        
 
-
-
-
-
-
-        
-
-    // //saving to local storage
-    // // localStorage.setItem('M', JSON.stringify(myLibrary))
+// setting Library to be stored in local storage
+function setData() {
+  localStorage.setItem(`myLibrary`, JSON.stringify(myLibrary));
+}
+  
+//pulls books from local storage when page is refreshed
+function restore() {
+  if(!localStorage.myLibrary) {
+      render();
+  }else {
+      let objects = localStorage.getItem('myLibrary') // gets information from local storage to use in below loop to create DOM/display
+      objects = JSON.parse(objects);
+      myLibrary = objects;
+      render();
+  }
+}
+restore();
