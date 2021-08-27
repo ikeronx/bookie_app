@@ -29,13 +29,6 @@ class Book {
 
 //creates default books from Book Constructor, adds to library
 let myLibrary = [
-  { title: 'The Fifth Season', author: 'N.K. Jemisin', read: "read", pages: 419 },
-  {
-    title: "Dark Matter",
-    author: "Blake Crouch",
-    read: "read",
-    pages: 342,
-  },
   { title: 'Nineteen Eighty-Four', author: 'Geroge Orwell', read: 'read', pages: 328 },
   { title: 'A Brief History Of Seven Killings', author: 'Marlon James', read: 'not read', pages: 609},
 ];
