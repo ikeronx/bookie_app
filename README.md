@@ -14,7 +14,7 @@ Create a library where books are stored in localStorage<br>
 #### What I learned:
 - The basics of localStorage by using the Mozilla documentation
 and also about JSON _stringify_ and _parse_ methods which made handling the data extremely easy.
-- How use Object Constructors to reduce the code. 
+- How to use Object Constructors to reduce the code. 
 - Better knowledge of Javascript.
 
 ## Built with
