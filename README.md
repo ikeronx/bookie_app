@@ -1,9 +1,9 @@
 # Library 👨🏾‍💻
-[library for The Odin Project](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library/) Foundations course. 
+Library for [The Odin Project](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library/) Foundations course. 
 
 ### Objective: 
 Create a library where books are stored in localStorage<br>
-[Live Demo 👈](https://ikeronx.github.io/etch-a-sketch/)
+[Live Demo 👈](https://ikeronx.github.io/library/)
 
 #### Requirements:
 - A _render()_ function that loops through the array and displays each book on the page
