@@ -13,10 +13,6 @@ const $form = document.getElementById('modal-popup').addEventListener("submit", 
     hideBackgroundFade()
 })
 
-window.addEventListener('DOMContentLoaded', () => {
-  render();
-});
-
 //book class: represents a book
 class Book {
     constructor(title, author, pages, read) {
@@ -200,3 +196,7 @@ function restore() {
   }
 }
 restore();
+
+window.addEventListener('DOMContentLoaded', () => {
+  render();
+});
