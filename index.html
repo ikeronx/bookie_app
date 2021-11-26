@@ -41,7 +41,7 @@
         </div>
         </div><br>
         <div class ='row'>
-            <button id='show-modal-add-book-btn' class="button-primary add-book-button"><center>Add Book</center>
+            <button class="button-primary add-book-btn"><center>Add Book</center>
             </button>
         </div><br><br>
         <div class ='modal modal--hidden'>
@@ -49,8 +49,9 @@
                 <div class ='modal__close-bar'>
                     <span>X</span>
                 </div>
-                <p class ='modal__header'><h5>Add new book</h5></p>
-                <form id='modal-popup'> 
+                
+                <form> 
+                    <h5 class ='modal__header'>Add new book</h5>
                     <div class="row">
                         <input type="text" class="u-full-width input-field" id="title" placeholder= 'Title' required/>
                     </div><br>
@@ -67,7 +68,8 @@
                             </select> 
                         </div><br>
                         <div class="row">
-                            <input type='submit' value='submit' class='button-primary sub-button'/> 
+                            <button type='submit' value='submit' class='button-primary submit-btn'>Submit</button>
+                            <button type='reset' value='save' class='button-primary save-btn'>Save</button>
                         </div>
                 </form> 
             </div>
