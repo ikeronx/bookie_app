@@ -4,6 +4,7 @@ const $pages = document.getElementById('pages');
 const $read = document.getElementById('read');
 const backgroundFade = document.getElementById('overlay-back');
 const addBookBtn = document.querySelector('.add-book-btn');
+const modalHeader = document.querySelector('.modal__header');
 const submitBtn = document.querySelector('.submit-btn');
 const saveBtn = document.querySelector('.save-btn');
 
@@ -23,7 +24,6 @@ class Book {
 
 // creates default books from Book Constructor, adds to library
 let myLibrary = [
-        { title: 'The Fifth Season', author: 'N.K. Jemisin', read: 'read', pages: 419 },
         {
                 title: 'Dark Matter',
                 author: 'Blake Crouch',
@@ -31,7 +31,6 @@ let myLibrary = [
                 pages: 342,
         },
         { title: 'Nineteen Eighty-Four', author: 'Geroge Orwell', read: 'read', pages: 328 },
-        { title: 'A Brief History Of Seven Killings', author: 'Marlon James', read: 'not read', pages: 609 },
 ];
 
 // adds a new book to myLibrary
@@ -70,6 +69,7 @@ function createBook(item) {
         const pageDiv = document.createElement('div');
         const removeBtn = document.createElement('button');
         const readBtn = document.createElement('button');
+        const updateBtn = document.createElement('button');
 
         bookDiv.classList.add('book');
         bookDiv.setAttribute('id', myLibrary.indexOf(item));
@@ -141,7 +141,45 @@ function createBook(item) {
                 setData(); // saves updated array in local storage
                 render();
         });
+        // update book info
+        bookDiv.appendChild(updateBtn);
+        updateBtn.textContent = 'update';
+        updateBtn.classList.add('u-full-width', 'update-btn');
+        updateBtn.style.cssText = `
+    color: rgb(192, 183, 169);
+    border-color: rgba(141, 38, 20, 0.493);
+    `;
+
+        updateBtn.addEventListener('click', () => {
+                document.querySelector('.modal').classList.remove('modal--hidden');
+                showBackgroundFade();
+                modalHeader.textContent = 'Update Book';
+                submitBtn.style.display = 'none';
+                saveBtn.style.display = 'inline-block';
+
+                // populate form with current book info to update it with new info from user input
+                myLibrary.find((element) => {
+                        $title.value = element.title;
+                        $author.value = element.author;
+                        $pages.value = element.pages;
+                        $read.value = element.read;
+                });
+        });
 }
+
+saveBtn.addEventListener('click', () => {
+        // item.title = $title.value;
+        // item.author = $author.value;
+        // item.pages = $pages.value;
+        // item.read = $read.value;
+
+        setData();
+        addBookToLibrary();
+        render();
+        clearForm();
+        document.querySelector('.modal').classList.add('modal--hidden');
+        hideBackgroundFade();
+});
 
 // turns background fade on
 function showBackgroundFade() {
@@ -155,21 +193,13 @@ const hideBackgroundFade = () => {
         backgroundFade.style.transition = 'none';
 };
 
-// event listener to toggle modal on and fade background
-// const showModal = () => {
-//         // document.querySelector('#show-modal-add-book-btn').addEventListener('click', toggleModal);
-//         document.querySelector('#show-modal-add-book-btn').addEventListener('click', () => {
-//                 document.querySelector('.modal').classList.remove('modal--hidden');
-//                 showBackgroundFade();
-//                 saveBtn.style.display = 'none';
-//         });
-// };
-
 // hides modal & turns off background fade
 const hideModal = () => {
         document.querySelector('.modal__close-bar span').addEventListener('click', () => {
                 document.querySelector('.modal').classList.add('modal--hidden');
+                submitBtn.style.display = 'inline-block';
                 hideBackgroundFade();
+                clearForm();
         });
 };
 hideModal();
@@ -178,8 +208,9 @@ hideModal();
 addBookBtn.addEventListener('click', () => {
         document.querySelector('.modal').classList.remove('modal--hidden');
         showBackgroundFade();
+        modalHeader.textContent = 'Add Book';
+        submitBtn.style.display = 'inline-block';
         saveBtn.style.display = 'none';
-        submitBtn.style.display = 'none';
 });
 
 // submit btn
