@@ -30,13 +30,12 @@ let myLibrary = [
                 read: 'read',
                 pages: 342,
         },
-        { title: 'Nineteen Eighty-Four', author: 'Geroge Orwell', read: 'read', pages: 328 },
+        { title: '1984', author: 'George Orwell', read: 'not read', pages: 328 },
 ];
 
 // adds a new book to myLibrary
 function addBookToLibrary() {
-        let newBook;
-        newBook = new Book($title.value, $author.value, $pages.value, $read.value);
+        const newBook = new Book($title.value, $author.value, $pages.value, $read.value);
         myLibrary.push(newBook);
 
         setData();
@@ -99,10 +98,10 @@ function createBook(item) {
         if (item.read === false) {
                 readBtn.textContent = 'not read';
                 readBtn.style.cssText = `
-    color: rgb(192, 183, 169);
-    border-color: rgba(141, 4, 56, 1.103);
-    background: rgba(141, 38, 20, 0.493);
-    `;
+        color: rgb(192, 183, 169);
+        border-color: rgba(141, 4, 56, 1.103);
+        background: rgba(141, 38, 20, 0.493);
+        `;
         }
         if (item.read === 'read') {
                 readBtn.textContent = 'read';
@@ -110,20 +109,29 @@ function createBook(item) {
         if (item.read === 'not read') {
                 readBtn.textContent = 'not read';
                 readBtn.style.cssText = `
-      color: rgb(192, 183, 169);
-      border-color: rgba(141, 4, 56, 1.103);
-      background: rgba(141, 38, 20, 0.493);
-      `;
+        color: rgb(192, 183, 169);
+        border-color: rgba(141, 4, 56, 1.103);
+        background: rgba(141, 38, 20, 0.493);
+        `;
         }
+
+        // update book info
+        bookDiv.appendChild(updateBtn);
+        updateBtn.textContent = 'update';
+        updateBtn.classList.add('u-full-width', 'update-btn');
+        updateBtn.style.cssText = `
+        color: rgb(192, 183, 169);
+        background: rgba(141, 4, 56, 0.103);
+        border-color: rgba(141, 38, 20, 0.493);
+        `;
 
         removeBtn.textContent = 'remove';
         removeBtn.setAttribute('id', 'removeBtn');
-        removeBtn.classList.add('button-primary', 'u-full-width', 'remove-button');
+        removeBtn.classList.add('u-full-width', 'remove-button');
         removeBtn.style.cssText = `
-    color: rgb(192, 183, 169);
-    background: rgba(141, 4, 56, 0.103);
-    border-color: rgba(141, 38, 20, 0.493);
-    `;
+        color: rgb(192, 183, 169);
+        coloackground: rgba(141, 4, 56, 0.103);r: rgb(192, 183, 169);
+        `;
         bookDiv.appendChild(removeBtn);
 
         bookShelf.appendChild(bookDiv);
@@ -141,44 +149,44 @@ function createBook(item) {
                 setData(); // saves updated array in local storage
                 render();
         });
-        // update book info
-        bookDiv.appendChild(updateBtn);
-        updateBtn.textContent = 'update';
-        updateBtn.classList.add('u-full-width', 'update-btn');
-        updateBtn.style.cssText = `
-    color: rgb(192, 183, 169);
-    border-color: rgba(141, 38, 20, 0.493);
-    `;
 
+        // opens modal to update book info
         updateBtn.addEventListener('click', () => {
                 document.querySelector('.modal').classList.remove('modal--hidden');
                 showBackgroundFade();
-                modalHeader.textContent = 'Update Book';
+                modalHeader.textContent = 'Edit Book';
                 submitBtn.style.display = 'none';
                 saveBtn.style.display = 'inline-block';
 
-                // populate form with current book info to update it with new info from user input
-                myLibrary.find((element) => {
-                        $title.value = element.title;
-                        $author.value = element.author;
-                        $pages.value = element.pages;
-                        $read.value = element.read;
-                });
+                // populates form with current book info to update it with new info from user input
+                $title.value = item.title;
+                $author.value = item.author;
+                $pages.value = item.pages;
+                $read.value = item.read;
+
+  
+                if (item.read === true) {
+                        $read.value = 'read';
+                } else if (item.read === false) {
+                        $read.value = 'not read';
+                } else if (item.read === '') {
+                        $read.value = 'not read';
+                }
         });
 }
 
+// saves the updated user input on click and closes modal
 saveBtn.addEventListener('click', () => {
-        // item.title = $title.value;
-        // item.author = $author.value;
-        // item.pages = $pages.value;
-        // item.read = $read.value;
+        // removes the book from the library array and adds the updated book to the library array and saves it to local storage again with updated info from user input in the form fields in the modal window and closes the modal window after submission of the form fields in the modal window
+        myLibrary.splice(myLibrary.indexOf(), 1);
 
-        setData();
+        // myLibrary.shift(new Book($title.value, $author.value, $pages.value, $read.value));
         addBookToLibrary();
+        setData();
         render();
-        clearForm();
         document.querySelector('.modal').classList.add('modal--hidden');
         hideBackgroundFade();
+        clearForm();
 });
 
 // turns background fade on
@@ -208,7 +216,7 @@ hideModal();
 addBookBtn.addEventListener('click', () => {
         document.querySelector('.modal').classList.remove('modal--hidden');
         showBackgroundFade();
-        modalHeader.textContent = 'Add Book';
+        modalHeader.textContent = 'Enter Book Info';
         submitBtn.style.display = 'inline-block';
         saveBtn.style.display = 'none';
 });
