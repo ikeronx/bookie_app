@@ -4,7 +4,7 @@
 
 ### Objective: 
 Create a library where books are stored in localStorage<br>
-[Live Demo 👈](https://ikeronx.github.io/etch-a-sketch/)
+[Live Demo 👈](https://ikeronx.github.io/bookie_app/)
 
 #### Requirements:
 - A _render()_ function that loops through the array and displays each book on the page
