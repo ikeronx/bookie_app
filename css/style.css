@@ -9,7 +9,7 @@
 
 body {
     background-image:  
-    linear-gradient(to bottom,  #000000, rgba(0, 0, 0, 0.877)), 
+    linear-gradient(to bottom,  #000000, rgba(0, 0, 0, 0.863)), 
     url('/book.jpeg'); 
     background-size: cover;
     background-repeat: no-repeat;

@@ -163,7 +163,6 @@ function createBook(item) {
         removeBtn.style.cssText = `
         color: rgb(192, 183, 169);
         border-color: rgba(141, 38, 20, 0.493);
-
         `;
 
         // adds toggle ability to each book 'read' button on click
@@ -183,21 +182,21 @@ function showBackgroundFade() {
 }
 
 // removes background fade from modal window
-const hideBackgroundFade = () => {
+const removeBackgroundFade = () => {
         backgroundFade.style.display = 'none';
         backgroundFade.style.transition = 'none';
 };
 
 // hides modal & removes background fade
-const hideModal = () => {
+const removeModal = () => {
         document.querySelector('.modal__close-bar span').addEventListener('click', () => {
                 document.querySelector('.modal').classList.add('modal--hidden');
                 submitBtn.style.display = 'inline-block';
-                hideBackgroundFade();
+                removeBackgroundFade();
                 clearForm();
         });
 };
-hideModal();
+removeModal();
 
 // add book button - modal with form pops up to add a new book to the library array and saves it to local storage again with new info from user input in the form fields in the modal window and closes the modal window after submission of the form fields in the modal window
 addBookBtn.addEventListener('click', () => {
@@ -213,7 +212,7 @@ submitBtn.addEventListener('click', () => {
         addBookToLibrary();
         render();
         clearForm();
-        hideBackgroundFade();
+        removeBackgroundFade();
         document.querySelector('.modal').classList.add('modal--hidden');
 });
 
@@ -227,7 +226,7 @@ saveBtn.addEventListener('click', () => {
         setData();
         render();
         document.querySelector('.modal').classList.add('modal--hidden');
-        hideBackgroundFade();
+        removeBackgroundFade();
         clearForm();
 });
 
