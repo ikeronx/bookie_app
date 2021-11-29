@@ -1,9 +1,9 @@
 
 # boOkie 👨🏾‍💻
-[library for The Odin Project](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library/) Foundations course. 
+[Library Project for The Odin Project](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library/) Javascript course. 
 
 ### Objective: 
-Create a library where books are stored in localStorage<br>
+Create a library app so users can keep track of book they have or haven't read and store them in localStorage<br>
 [Live Demo 👈](https://ikeronx.github.io/bookie_app/)
 
 #### Requirements:
@@ -13,6 +13,7 @@ Create a library where books are stored in localStorage<br>
 - A button to handle the read status of the book
 
 #### What I learned:
+- How build a CRUD app by implementing a edit/update feature to the app.
 - The basics of localStorage by using the Mozilla documentation
 and also about JSON _stringify_ and _parse_ methods which made handling the data extremely easy.
 - How use Object Constructors to reduce the code. 
