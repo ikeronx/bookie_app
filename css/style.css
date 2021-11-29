@@ -10,7 +10,7 @@
 body {
     background-image:  
     linear-gradient(to bottom,  #000000, rgba(0, 0, 0, 0.877)), 
-    url('book.jpeg'); 
+    url(/book.jpeg); 
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
