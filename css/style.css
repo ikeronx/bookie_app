@@ -22,34 +22,47 @@ h2 {
   font-size: 2.5rem;
   color: rgb(192, 183, 169);
   padding-top: 3rem;
-  transform: translate(0.1%, 38%);
+  transform: translate(1%, 38%);
   /* position: relative;   */
   margin-top: -6rem;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transform: translate(0%, -8%);
+  }
+
+.heading-container {
+  overflow: auto; 
+  position: relative;  
 }
 
 .line{
   height: 1px;
   background-color: rgb(192, 183, 169, 0.6);;
   border: none;
+
+  margin-left: 1.9%;
+  margin-right: 6.5%; 
 }
 
 .add-book-btn {
-  /* position: relative;   */
   display: flex;
   flex-direction: row;
-  margin-left: 71.5rem;
+  margin-left: 70.5rem;
   margin-top: -6rem;
   transform: translate(-50%, -50%);
   cursor: pointer; 
   text-align: center;
 }
 
-
 /* MODAL POP UP*/
 
 .modal {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   height: 100%;
   width: 100%;
@@ -96,7 +109,8 @@ h2 {
 
 #bookShelf {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+  flex-wrap: wrap; 
   height: 100vh;
 }
 
@@ -134,11 +148,11 @@ h2 {
 /*background fade*/
 
 #overlay-back {
-  position: fixed;
+  position: absolute;
   top: 0px;
   left: 0px;
-  bottom: 0px;
-  right: 0px;
+  bottom: -100%;
+  right: -100%;
 
   background: rgb(15, 15, 15);
   opacity: 0.8;
@@ -149,4 +163,48 @@ h2 {
   transition: background-color 1s;
 }
   
+ /* make addBookBtn mobile responsive each time the window is resized to make sure it is always visible */
+
+  @media screen and (max-width: 900px) {
+    .add-book-btn {
+      display: flex;
+      flex-direction: row;
+      margin-left: auto;
+      margin-top: -6rem;
+    }
+    .modal{
+      top: 75%;
+    }
+  }
+  @media screen and (max-width: 630px) {
+    .container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      flex-wrap: wrap;
+    }
+    h2 {
+      transform: translate(2.5%, 38%);
+    }
+    .add-book-btn {
+      display: flex;
+      flex-direction: row;
+      margin-left: 32rem;
+      margin-top: -6rem;
+    }
+    .line{
+      margin-right: 12%;
+      margin-left: 4%;
+    } 
+    .modal{
+      top: 75%;
+      left: 100%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+
 

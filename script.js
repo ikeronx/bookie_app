@@ -59,7 +59,7 @@ function render() {
         }
 }
 
-// creates book DOM elements, to use in render() which displays each book info on a card UI
+// creates book visual in browser from Book Constructor object and adds to DOM (bookShelf) element in index.html file
 function createBook(item) {
         const bookShelf = document.querySelector('#bookShelf');
         const bookDiv = document.createElement('div');
@@ -115,7 +115,14 @@ function createBook(item) {
         `;
         }
 
-        // update book info
+        // add toggle ability to each book 'read' button on click
+        readBtn.addEventListener('click', () => {
+                item.read = !item.read;
+                setData(); // saves updated array in local storage
+                render();
+        });
+
+        // updates book info
         bookDiv.appendChild(updateBtn);
         updateBtn.textContent = 'update';
         updateBtn.classList.add('u-full-width', 'update-btn');
@@ -125,32 +132,7 @@ function createBook(item) {
         border-color: rgba(141, 38, 20, 0.493);
         `;
 
-        removeBtn.textContent = 'remove';
-        removeBtn.setAttribute('id', 'removeBtn');
-        removeBtn.classList.add('u-full-width', 'remove-button');
-        removeBtn.style.cssText = `
-        color: rgb(192, 183, 169);
-        coloackground: rgba(141, 4, 56, 0.103);r: rgb(192, 183, 169);
-        `;
-        bookDiv.appendChild(removeBtn);
-
-        bookShelf.appendChild(bookDiv);
-
-        // add toggle ability to each book 'read' button on click
-        removeBtn.addEventListener('click', () => {
-                myLibrary.splice(myLibrary.indexOf(item), 1);
-                setData(); // saves updated array in local storage
-                render();
-        });
-
-        // add toggle ability to each book 'read' button on click
-        readBtn.addEventListener('click', () => {
-                item.read = !item.read;
-                setData(); // saves updated array in local storage
-                render();
-        });
-
-        // opens modal to update book info
+        // opens modal form to update book info
         updateBtn.addEventListener('click', () => {
                 document.querySelector('.modal').classList.remove('modal--hidden');
                 showBackgroundFade();
@@ -164,7 +146,7 @@ function createBook(item) {
                 $pages.value = item.pages;
                 $read.value = item.read;
 
-  
+                // checks if book is read or not and changes readBtn text accordingly to reflect current state of book info change in form input fields
                 if (item.read === true) {
                         $read.value = 'read';
                 } else if (item.read === false) {
@@ -173,35 +155,40 @@ function createBook(item) {
                         $read.value = 'not read';
                 }
         });
+
+        // removes book from library
+        removeBtn.textContent = 'remove';
+        removeBtn.setAttribute('id', 'removeBtn');
+        removeBtn.classList.add('u-full-width', 'remove-button');
+        removeBtn.style.cssText = `
+        color: rgb(192, 183, 169);
+        border-color: rgba(141, 38, 20, 0.493);
+
+        `;
+
+        // adds toggle ability to each book 'read' button on click
+        bookDiv.appendChild(removeBtn);
+        removeBtn.addEventListener('click', () => {
+                myLibrary.splice(myLibrary.indexOf(item), 1);
+                setData(); // saves updated array in local storage
+                render();
+        });
+        bookShelf.appendChild(bookDiv);
 }
 
-// saves the updated user input on click and closes modal
-saveBtn.addEventListener('click', () => {
-        // removes the book from the library array and adds the updated book to the library array and saves it to local storage again with updated info from user input in the form fields in the modal window and closes the modal window after submission of the form fields in the modal window
-        myLibrary.splice(myLibrary.indexOf(), 1);
-
-        // myLibrary.shift(new Book($title.value, $author.value, $pages.value, $read.value));
-        addBookToLibrary();
-        setData();
-        render();
-        document.querySelector('.modal').classList.add('modal--hidden');
-        hideBackgroundFade();
-        clearForm();
-});
-
-// turns background fade on
+// adds background fade to modal window
 function showBackgroundFade() {
         backgroundFade.style.display = 'block';
         backgroundFade.style.transition = 'background-color 2s';
 }
 
-// turns background fade off
+// removes background fade from modal window
 const hideBackgroundFade = () => {
         backgroundFade.style.display = 'none';
         backgroundFade.style.transition = 'none';
 };
 
-// hides modal & turns off background fade
+// hides modal & removes background fade
 const hideModal = () => {
         document.querySelector('.modal__close-bar span').addEventListener('click', () => {
                 document.querySelector('.modal').classList.add('modal--hidden');
@@ -212,7 +199,7 @@ const hideModal = () => {
 };
 hideModal();
 
-// add book button - modal pops up
+// add book button - modal with form pops up to add a new book to the library array and saves it to local storage again with new info from user input in the form fields in the modal window and closes the modal window after submission of the form fields in the modal window
 addBookBtn.addEventListener('click', () => {
         document.querySelector('.modal').classList.remove('modal--hidden');
         showBackgroundFade();
@@ -230,7 +217,21 @@ submitBtn.addEventListener('click', () => {
         document.querySelector('.modal').classList.add('modal--hidden');
 });
 
-// setting Library to be stored in local storage
+// saves the updated user input on click and closes modal
+saveBtn.addEventListener('click', () => {
+        // removes the book from the library array and adds the updated book to the library array and saves it to local storage again with updated info from user input in the form fields in the modal window and closes the modal window after submission of the form fields in the modal window
+        myLibrary.splice(myLibrary.indexOf(0), 1);
+
+        // myLibrary.shift(new Book($title.value, $author.value, $pages.value, $read.value));
+        addBookToLibrary();
+        setData();
+        render();
+        document.querySelector('.modal').classList.add('modal--hidden');
+        hideBackgroundFade();
+        clearForm();
+});
+
+// sets books in myLibrary array to be stored in local storage
 function setData() {
         localStorage.setItem(`myLibrary`, JSON.stringify(myLibrary));
 }
