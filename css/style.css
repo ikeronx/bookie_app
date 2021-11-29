@@ -9,8 +9,8 @@
 
 body {
     background-image:  
-    linear-gradient(to bottom,  #000000, #0a0c03ec), 
-    url(https://images.unsplash.com/photo-1447023029226-ef8f6b52e3ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80); 
+    linear-gradient(to bottom,  #000000, rgba(0, 0, 0, 0.877)), 
+    url('/book.jpeg'); 
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -153,6 +153,7 @@ h2 {
   left: 0px;
   bottom: -100%;
   right: -100%;
+  left: -100%;
 
   background: rgb(15, 15, 15);
   opacity: 0.8;
