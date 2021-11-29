@@ -8,15 +8,7 @@ const modalHeader = document.querySelector('.modal__header');
 const submitBtn = document.querySelector('.submit-btn');
 const saveBtn = document.querySelector('.save-btn');
 
-<<<<<<< HEAD
-window.addEventListener('DOMContentLoaded', () => {
-        render();
-});
-
-// book class: represents a book
-=======
 //book class: represents a book
->>>>>>> 76dc0be4109da683c31645925a45eadfdb3db01f
 class Book {
         constructor(title, author, pages, read) {
                 this.title = title;
@@ -28,7 +20,6 @@ class Book {
 
 // creates default books from Book Constructor, adds to library
 let myLibrary = [
-<<<<<<< HEAD
         {
                 title: 'Dark Matter',
                 author: 'Blake Crouch',
@@ -36,10 +27,6 @@ let myLibrary = [
                 pages: 342,
         },
         { title: '1984', author: 'George Orwell', read: 'not read', pages: 328 },
-=======
-  { title: 'Nineteen Eighty-Four', author: 'Geroge Orwell', read: 'read', pages: 328 },
-  { title: 'A Brief History Of Seven Killings', author: 'Marlon James', read: 'not read', pages: 609},
->>>>>>> 76dc0be4109da683c31645925a45eadfdb3db01f
 ];
 
 // adds a new book to myLibrary
@@ -256,10 +243,3 @@ function restore() {
         }
 }
 restore();
-<<<<<<< HEAD
-=======
-
-window.addEventListener('DOMContentLoaded', () => {
-  render();
-});
->>>>>>> 76dc0be4109da683c31645925a45eadfdb3db01f
