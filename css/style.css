@@ -22,7 +22,7 @@ h2 {
   font-size: 2.5rem;
   color: rgb(192, 183, 169);
   padding-top: 3rem;
-  transform: translate(1%, 38%);
+  transform: translate(1.5%, 38%);
   /* position: relative;   */
   margin-top: -6rem;
 }
@@ -169,7 +169,7 @@ h2 {
     .add-book-btn {
       display: flex;
       flex-direction: row;
-      margin-left: auto;
+      margin-left: 65rem;
       margin-top: -6rem;
     }
     .modal{
