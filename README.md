@@ -1,19 +1,10 @@
-<<<<<<< HEAD
-# Library 👨🏾‍💻
-=======
+
 # boOkie 👨🏾‍💻
->>>>>>> 5aeb47f8c470adef1df20928b5377123fa2fc862
 [library for The Odin Project](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library/) Foundations course. 
 
 ### Objective: 
 Create a library where books are stored in localStorage<br>
 [Live Demo 👈](https://ikeronx.github.io/etch-a-sketch/)
-<<<<<<< HEAD
-=======
-
-[alt text](https://imgur.com/a/FDzkPPB)
-
->>>>>>> 5aeb47f8c470adef1df20928b5377123fa2fc862
 
 #### Requirements:
 - A _render()_ function that loops through the array and displays each book on the page
