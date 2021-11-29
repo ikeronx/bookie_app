@@ -3,7 +3,7 @@
 [Library Project for The Odin Project](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library/) Javascript course. 
 
 ### Objective: 
-Create a library app so users can keep track of book they have or haven't read and store them in localStorage<br>
+Create a library app so users can keep track of books they have or haven't read and store them in localStorage<br>
 [Live Demo 👈](https://ikeronx.github.io/bookie_app/)
 
 #### Requirements:
