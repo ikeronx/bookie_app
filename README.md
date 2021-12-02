@@ -13,7 +13,7 @@ Create a library app so users can keep track of books they have or haven't read 
 - A button to handle the read status of the book
 
 #### What I learned:
-- How build a CRUD app by implementing a edit/update feature to the app.
+- How to build a CRUD app by implementing a edit/update feature for the app.
 - The basics of localStorage by using the Mozilla documentation
 and also about JSON _stringify_ and _parse_ methods which made handling the data extremely easy.
 - How use Object Constructors to reduce the code. 
