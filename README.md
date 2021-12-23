@@ -1,6 +1,6 @@
 
 # boOkie 👨🏾‍💻
-[Library Project for The Odin Project](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library/) Javascript course. 
+<!-- [Library Project for The Odin Project](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library/) Javascript course.  -->
 
 ### Objective: 
 Create a library app so users can keep track of books they have or haven't read and store them in localStorage<br>
