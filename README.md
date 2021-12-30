@@ -55,7 +55,7 @@ I also wanted to experiment with DOM manipulation, and practice creating my own 
 * I learned how to create HTML elements from scratch by using JavaScript. 
 * I also learned how to use localStorage to save the data for each book on the user's web browser so the user still has access to the books even they close the browser or reload the page.
 
-<img width="440px" src="https://i.imgur.com/JxfxH1d.png" target="_blank"/>
+<img src="https://i.imgur.com/JxfxH1d.png" target="_blank"/>
 
 
 
