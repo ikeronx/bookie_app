@@ -32,7 +32,7 @@ My relatives, friends, and I included have struggled with keeping track of books
 * I learned how to create HTML elements from scratch by using JavaScript. 
 * I also learned how to use localStorage to save the data for each book on the user's web browser so the user still has access to the books even they close the browser or reload the page.
 
-<img align="center"  src="https://i.imgur.com/JxfxH1d.png" width=440px target="_blank"/>
+<img align="center"  src="https://i.imgur.com/JxfxH1d.png" target="_blank"/>
 
 # What did I want to implement in the project?
 I decided to apply the following concepts around Object Oriented Programming (OOP):
