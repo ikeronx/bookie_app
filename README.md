@@ -35,6 +35,7 @@ I also wanted to experiment with DOM manipulation, and practice creating my own 
 * HTML
 * CSS
 * JS
+* Web Storage API
 
 ### Tools
 
