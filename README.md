@@ -1,14 +1,19 @@
 
 # Overview
 <strong>BoOkie</strong> is a single-page CRUD application that allows a user to add, edit, delete, and save books. The books are saved in local storage via the Web Storage API so the user still has access to the books even they close the browser or reload the page.
-
-👉 You can use the app [here](https://ikeronx.github.io/bookie_app/) 
-
-👉 You can take a closer look at the full code of the project in my [Github repository](https://github.com/ikeronx/bookie_app)
-
  
  <img src="https://thumbs.gfycat.com/NegligibleFriendlyDogwoodtwigborer-size_restricted.gif" target="_blank"/>
  
+ 👉 You can use the app [here](https://ikeronx.github.io/bookie_app/) 
+
+👉 You can take a closer look at the full code of the project in my [Github repository](https://github.com/ikeronx/bookie_app)
+
+# Table of content
+* 🔗 [Why did I choose to build this project?](https://github.com/ikeronx/bookie_app/blob/main/README.md#why-did-i-choose-to-build-this-project) 
+* 🔗 [Why did I choose to build this project?](https://github.com/ikeronx/bookie_app/blob/main/README.md#what-did-i-want-to-implement-in-the-project) 
+* 🔗 [Features](https://github.com/ikeronx/bookie_app/blob/main/README.md#features) 
+* 🔗 [What I learned](https://github.com/ikeronx/bookie_app/blob/main/README.md#what-i-learned)
+* 🔗 [Tech stack used in this project](https://github.com/ikeronx/bookie_app/blob/main/README.md#built-with)  
 
 # Why did I choose to build this project?
 My relatives, friends, and I included have struggled with keeping track of books we've read so I decided to create boOkie to solve this problem. Additionally, doing courses and tutorials is great, but sometimes is difficult to evaluate how much are we actually learning. Watching video after video and coding along with the instructor gives us very good guidance, but it is not a realistic scenario. In a real-world job, we will have to solve problems and start figuring things out by ourselves (with the help of Google, of course, 😉). So, to test how much I was actually learning during the JavaScript course I was doing I decided to make a simple To-Do type app in HTML, CSS, and vanilla JavaScript which turned into a full-out CRUD app after I implemented the update feature.
@@ -61,7 +66,7 @@ I also wanted to experiment with DOM manipulation, and practice creating my own 
 
 
 
-# Built with
+# Tech stack used in this project
 
 ### Technologies
 
