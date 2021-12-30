@@ -7,14 +7,26 @@ BoOkie is a single-page CRUD application that allows a user to add, edit, delete
 My relatives, friends, and I included have struggled with keeping track of books we've read so I decided to create boOkie to solve this problem. Additionally, doing courses and tutorials is great, but sometimes is difficult to evaluate how much are we actually learning. Watching video after video and coding along with the instructor gives us very good guidance, but it is not a realistic scenario. In a real-world job, we will have to solve problems and start figuring things out by ourselves (with the help of Google, of course, 😉). So, to test how much I was actually learning during the JavaScript course I was doing I decided to make a simple To-Do type app in HTML, CSS, and vanilla JavaScript which turned into a full-out CRUD app after I implemented the update feature.
 
 # What did I want to implement in the project?
-I decided to apply the following concepts around Object Oriented Programming (OOP):
+#### I decided to apply the following concepts around Object Oriented Programming (OOP):
 * Classes
 * Properties
 
-I also wanted to experiment with DOM manipulation, and practice creating my own HTML elements from scratch.
+ <img
+    src="https://i.imgur.com/CmyWOu4.png" width=500px target="_blank"/>
+
+#### I also wanted to experiment with DOM manipulation, and practice creating my own HTML elements from scratch...
+
+ <img
+    src="https://i.imgur.com/eXxPR2y.png" width=500px target="_blank"/>
+
+#### and rendering in vanilla JavaScript
+
+ <img
+    src="https://i.imgur.com/qIOT6Wf.png" width=500px target="_blank"/>
+
+
 
 # Features
-- A _render()_ function that loops through the array and displays each book on the page
 - A form that allows users to add new books.
 - A button to handle the read status of the book
 - A update/edit button so users can update the book's info.
