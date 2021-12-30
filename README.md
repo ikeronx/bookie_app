@@ -83,6 +83,6 @@ I also wanted to experiment with DOM manipulation, and practice creating my own 
 * Git and GitHub
 
 
-## License
+<!-- ## License
 This project is licensed under the MIT License.
-The clean and beautiful layout is thanks to [Skeleton](http://getskeleton.com/)
+The clean and beautiful layout is thanks to [Skeleton](http://getskeleton.com/) -->
