@@ -1,6 +1,6 @@
 
 # Overview 🧑‍💻
-<strong>BoOkie</strong> is a single-page CRUD application that allows a user to add, edit, delete, and save books which are stored in local storage via the Web Storage API. 
+<strong>BoOkie</strong> is a single-page CRUD application that allows a user to add, edit, delete, and save books that are stored in local storage via the Web Storage API. 
 
  <img src="https://thumbs.gfycat.com/NegligibleFriendlyDogwoodtwigborer-size_restricted.gif" target="_blank"/>
  
