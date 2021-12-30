@@ -47,8 +47,8 @@ I also wanted to experiment with DOM manipulation, and practice creating my own 
 
 * A form that allows users to add new books.
 * A button to handle the read status of the book
-* A update/edit button so users can update the book's info.
-* A delete button.
+* A update button so users can update or edit the the book's info.
+* A remove button so users can delete books.
 * Books are stored in localStorage on the user's web browser so the user will still have access to the books even they close the browser or reload the page.
 
 
