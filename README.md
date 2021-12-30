@@ -49,7 +49,7 @@ I also wanted to experiment with DOM manipulation, and practice creating my own 
 * A button to handle the read status of the book
 * A update button so users can update or edit the the book's info.
 * A remove button so users can delete books.
-* Books are stored in localStorage on the user's web browser so the user will still have access to the books even they close the browser or reload the page.
+* Books are stored in localStorage on the user's web browser so the user will still have access to the books even they close the browser or reload the webpage.
 
 
 
@@ -57,8 +57,8 @@ I also wanted to experiment with DOM manipulation, and practice creating my own 
 * This was the first time I coded following the OOP paradigm and, despite feeling a bit out of my element, I now can see the potential that following this paradigm has.
 * I learned about the importance of structuring HTML in a meaningful semantic way, and how a good HTML structure can make our lives easy when we start working on CSS and JavaScript in later stages of the project.
 * I learned how to build a CRUD app by implementing an edit/update feature for the app which was a challenge in itself. 😩
-* I learned how to create HTML elements from scratch by using JavaScript. 
-* I also learned how to use localStorage to save the data for each book on the user's web browser so the user still has access to the books even they close the browser or reload the page.
+* I learned how to create HTML elements from scratch. 
+* I also learned how to use localStorage to save the data on the user's web browser.
 
 <img src="https://i.imgur.com/JxfxH1d.png" target="_blank"/>
 
