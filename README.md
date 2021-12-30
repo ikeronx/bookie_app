@@ -37,17 +37,22 @@ My relatives, friends, and I included have struggled with keeping track of books
 - This was the first time I coded following the OOP paradigm and, despite feeling a bit out of my element, I now can see the potential that following this paradigm has.
 - I learned about the importance of structuring HTML in a meaningful semantic way, and how a good HTML structure can make our lives easy when we start working on CSS and JavaScript in later stages of the project.
 - I learned how to build a CRUD app by implementing an edit/update feature for the app which was a challenge in itself.😤
-- I also learned how to use localStorage to save the data for each book on the user's web browser so the user still has access to the books even they close the browser or reload the page.
 - I learned how to create HTML elements from scratch by using JavaScript. 
+- I also learned how to use localStorage to save the data for each book on the user's web browser so the user still has access to the books even they close the browser or reload the page.
+
+<img
+    src="https://i.imgur.com/JxfxH1d.png" width=400px target="_blank"/>
+
 
 # Built with
 
 ### Technologies
 
-* HTML
-* CSS
-* JS
-* Web Storage API
+<img alt="HTML5" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png" /> HTML
+<img alt="CSS3" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png" /> CSS
+<img alt="JavaScript" width="26px" src="https://i1.wp.com/theicom.org/wp-content/uploads/2016/03/js-logo.png?fit=500%2C500&ssl=1&w=640" /> JS
+<img alt="API" width="26px" src="https://miro.medium.com/max/512/1*2vdWhNKgrxCoX3ZBnIQOQg.png" /> Web Storage API
+
 
 ### Tools
 
