@@ -56,7 +56,7 @@ I also wanted to experiment with DOM manipulation, and practice creating my own 
  # What I learned
 * This was the first time I coded following the OOP paradigm and, despite feeling a bit out of my element, I now can see the potential that following this paradigm has.
 * I learned about the importance of structuring HTML in a meaningful semantic way, and how a good HTML structure can make our lives easy when we start working on CSS and JavaScript in later stages of the project.
-* I learned how to build a CRUD app by implementing an edit/update feature for the app which was a challenge in itself. 😩
+* I learned how to build a CRUD app by implementing an edit/update feature which was a challenge in itself. 😩
 * I learned how to create HTML elements from scratch. 
 * I also learned how to use localStorage to save the data on the user's web browser.
 
