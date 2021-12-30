@@ -1,7 +1,7 @@
 
 # Overview 🧑‍💻
-<strong>BoOkie</strong> is a single-page CRUD application that allows a user to add, edit, delete, and save books. The books are saved in local storage via the Web Storage API so the user still has access to the books even they close the browser or reload the page.
- 
+<strong>BoOkie</strong> is a single-page CRUD application that allows a user to add, edit, delete, and save books which are stored in local storage via the Web Storage API. 
+
  <img src="https://thumbs.gfycat.com/NegligibleFriendlyDogwoodtwigborer-size_restricted.gif" target="_blank"/>
  
  👉 You can use the app [here](https://ikeronx.github.io/bookie_app/) 
