@@ -1,5 +1,5 @@
 
-# Overview
+# Overview 🧑‍💻
 <strong>BoOkie</strong> is a single-page CRUD application that allows a user to add, edit, delete, and save books. The books are saved in local storage via the Web Storage API so the user still has access to the books even they close the browser or reload the page.
  
  <img src="https://thumbs.gfycat.com/NegligibleFriendlyDogwoodtwigborer-size_restricted.gif" target="_blank"/>
@@ -10,7 +10,7 @@
 
 # Table of content
 * 🔗 [Why did I choose to build this project?](https://github.com/ikeronx/bookie_app/blob/main/README.md#why-did-i-choose-to-build-this-project) 
-* 🔗 [Why did I choose to build this project?](https://github.com/ikeronx/bookie_app/blob/main/README.md#what-did-i-want-to-implement-in-the-project) 
+* 🔗 [What did I want to implement in the project?](https://github.com/ikeronx/bookie_app/blob/main/README.md#what-did-i-want-to-implement-in-the-project) 
 * 🔗 [Features](https://github.com/ikeronx/bookie_app/blob/main/README.md#features) 
 * 🔗 [What I learned](https://github.com/ikeronx/bookie_app/blob/main/README.md#what-i-learned)
 * 🔗 [Tech stack used in this project](https://github.com/ikeronx/bookie_app/blob/main/README.md#built-with)  
@@ -56,7 +56,7 @@ I also wanted to experiment with DOM manipulation, and practice creating my own 
  # What I learned
 * This was the first time I coded following the OOP paradigm and, despite feeling a bit out of my element, I now can see the potential that following this paradigm has.
 * I learned about the importance of structuring HTML in a meaningful semantic way, and how a good HTML structure can make our lives easy when we start working on CSS and JavaScript in later stages of the project.
-* I learned how to build a CRUD app by implementing an edit/update feature for the app which was a challenge in itself.😤
+* I learned how to build a CRUD app by implementing an edit/update feature for the app which was a challenge in itself. 😩
 * I learned how to create HTML elements from scratch by using JavaScript. 
 * I also learned how to use localStorage to save the data for each book on the user's web browser so the user still has access to the books even they close the browser or reload the page.
 
