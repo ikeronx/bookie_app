@@ -40,9 +40,12 @@ I decided to apply the following concepts around Object Oriented Programming (OO
 * Properties
 
 I also wanted to experiment with DOM manipulation, and practice creating my own HTML elements from scratch...and rendering in vanilla JavaScript
+
  <img align="left" src="https://i.imgur.com/CmyWOu4.png" width=500px target="_blank"/>
  <img align="left" src="https://i.imgur.com/eXxPR2y.png" width=420px target="_blank"/>
  <img align="center" src="https://i.imgur.com/qIOT6Wf.png" width=500px target="_blank"/>
+
+
 
 
 
