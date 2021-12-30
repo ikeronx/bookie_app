@@ -13,7 +13,7 @@
 * 🔗 [What did I want to implement in the project?](https://github.com/ikeronx/bookie_app/blob/main/README.md#what-did-i-want-to-implement-in-the-project) 
 * 🔗 [Features](https://github.com/ikeronx/bookie_app/blob/main/README.md#features) 
 * 🔗 [What I learned](https://github.com/ikeronx/bookie_app/blob/main/README.md#what-i-learned)
-* 🔗 [Tech stack used in this project](https://github.com/ikeronx/bookie_app/blob/main/README.md#built-with)  
+* 🔗 [Tech stack used in this project](https://github.com/ikeronx/bookie_app/blob/main/README.md#tech-stack-used-in-this-project)  
 
 # Why did I choose to build this project?
 My relatives, friends, and I included have struggled with keeping track of books we've read so I decided to create boOkie to solve this problem. Additionally, doing courses and tutorials is great, but sometimes is difficult to evaluate how much are we actually learning. Watching video after video and coding along with the instructor gives us very good guidance, but it is not a realistic scenario. In a real-world job, we will have to solve problems and start figuring things out by ourselves (with the help of Google, of course, 😉). So, to test how much I was actually learning during the JavaScript course I was doing I decided to make a simple To-Do type app in HTML, CSS, and vanilla JavaScript which turned into a full-out CRUD app after I implemented the update feature.
