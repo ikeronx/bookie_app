@@ -48,10 +48,10 @@ My relatives, friends, and I included have struggled with keeping track of books
 
 ### Technologies
 
-<img alt="HTML5" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png" /> HTML
-<img alt="CSS3" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png" /> CSS
-<img alt="JavaScript" width="26px" src="https://i1.wp.com/theicom.org/wp-content/uploads/2016/03/js-logo.png?fit=500%2C500&ssl=1&w=640" /> JS
-<img alt="API" width="26px" src="https://miro.medium.com/max/512/1*2vdWhNKgrxCoX3ZBnIQOQg.png" /> Web Storage API
+* <img alt="HTML5" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png" /> HTML
+* <img alt="CSS3" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png" /> CSS
+* <img alt="JavaScript" width="26px" src="https://i1.wp.com/theicom.org/wp-content/uploads/2016/03/js-logo.png?fit=500%2C500&ssl=1&w=640" /> JS
+* <img alt="API" width="26px" src="https://miro.medium.com/max/512/1*2vdWhNKgrxCoX3ZBnIQOQg.png" /> Web Storage API
 
 
 ### Tools
