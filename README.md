@@ -39,17 +39,17 @@ I decided to apply the following concepts around Object Oriented Programming (OO
 * Classes
 * Properties
 
- <img align="left" src="https://i.imgur.com/CmyWOu4.png" target="_blank"/>
+ <img src="https://i.imgur.com/CmyWOu4.png" target="_blank"/>
  
 
 I also wanted to experiment with DOM manipulation, and practice creating my own HTML elements from scratch...
 
- <img align="left" src="https://i.imgur.com/eXxPR2y.png" target="_blank"/>
+ <img src="https://i.imgur.com/eXxPR2y.png" target="_blank"/>
  
  
  and rendering in vanilla JavaScript
  
- <img align="center" src="https://i.imgur.com/qIOT6Wf.png" target="_blank"/>
+ <img src="https://i.imgur.com/qIOT6Wf.png" target="_blank"/>
 
 
 
