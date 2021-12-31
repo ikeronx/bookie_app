@@ -27,14 +27,19 @@ I decided to apply the following concepts around Object Oriented Programming (OO
  <img src="https://i.imgur.com/CmyWOu4.png" target="_blank"/>
  
 
-I also wanted to experiment with DOM manipulation, and practice creating my own HTML elements from scratch...
+I also wanted to experiment with DOM manipulation, and practice creating my own HTML elements from scratch and rendering in vanilla JavaScript:
 
  <img src="https://i.imgur.com/eXxPR2y.png" target="_blank"/>
  
- 
- and rendering in vanilla JavaScript
- 
  <img src="https://i.imgur.com/qIOT6Wf.png" target="_blank"/>
+ 
+ And add localstrage:
+ 
+ <img src="https://i.imgur.com/JxfxH1d.png" target="_blank"/>
+
+
+ 
+ 
  
  
  # Features
@@ -42,6 +47,8 @@ I also wanted to experiment with DOM manipulation, and practice creating my own 
 <img align="right" src="https://i.imgur.com/XczzkFp.png" width=500px target="_blank"/>
 <img align="right" src="https://i.imgur.com/PKkkjAv.png" width=500px target="_blank"/>
 <img align="right" src="https://i.imgur.com/aK30KaI.png" width=500px target="_blank"/>
+<img align="right" src="https://i.imgur.com/aq3KxMN.png" width=500px target="_blank"/>
+
 
 
 
@@ -59,12 +66,6 @@ I also wanted to experiment with DOM manipulation, and practice creating my own 
 * I learned how to build a CRUD app by implementing an edit/update feature which was a challenge in itself. 😩
 * I learned how to create HTML elements from scratch. 
 * I also learned how to use localStorage to save the data on the user's web browser.
-
-<img src="https://i.imgur.com/JxfxH1d.png" target="_blank"/>
-
-
-
-
 
 # Tech stack used in this project
 
