@@ -8,7 +8,7 @@ const modalHeader = document.querySelector('.modal__header');
 const submitBtn = document.querySelector('.submit-btn');
 const saveBtn = document.querySelector('.save-btn');
 
-//book class: represents a book
+// book class: represents a book
 class Book {
         constructor(title, author, pages, read) {
                 this.title = title;
@@ -215,9 +215,8 @@ submitBtn.addEventListener('click', () => {
 // saves the updated user input on click and closes modal
 saveBtn.addEventListener('click', () => {
         // removes the book from the library array and adds the updated book to the library array and saves it to local storage again with updated info from user input in the form fields in the modal window and closes the modal window after submission of the form fields in the modal window
+        // findIndex
         myLibrary.splice(myLibrary.indexOf(0), 1);
-
-        // myLibrary.shift(new Book($title.value, $author.value, $pages.value, $read.value));
         addBookToLibrary();
         setData();
         render();

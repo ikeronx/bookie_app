@@ -8,15 +8,17 @@
 } 
 
 body {
+  background-color:  #141516;
     background-image:  
     linear-gradient(to bottom,  #000000, rgba(0, 0, 0, 0.877)), 
-    url('/book.jpg'); 
+    url(https://images.unsplash.com/photo-1531072901881-d644216d4bf9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2671&q=80); 
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: fixed; 
 }
 
 h2 {
+  font-family: 'Times New Roman', Times, serif;
   display: flex;
   flex-direction: row;
   font-size: 2.5rem;
@@ -203,7 +205,7 @@ h2 {
     .modal{
       top: 75%;
       left: 100%;
-      transform: translate(-50%, -50%);
+      transform: translate(-98%, -80%);
     }
   }
 
