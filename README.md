@@ -78,9 +78,9 @@ I also wanted to experiment with DOM manipulation, and practice creating my own 
 
 ### Tools
 
-* Visual Studio Code
-* UNIX terminal
-* Git and GitHub
+* <img alt="JavaScript" width="26px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png" />  Visual Studio Code
+* <img alt="JavaScript" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/terminal/terminal.png" /> UNIX terminal
+* <img alt="JavaScript" width="26px" src="https://www.nicepng.com/png/full/52-520535_free-files-github-github-icon-png-white.png" /> Git and GitHub
 
 
 <!-- ## License
