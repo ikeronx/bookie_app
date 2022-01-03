@@ -58,6 +58,8 @@ body {
   transform: translate(-50%, -50%);
   cursor: pointer; 
   text-align: center;
+
+
 }
 
 /* MODAL POP UP*/
@@ -73,6 +75,9 @@ body {
   align-items: center;
   transform: translate(-50%, -50%);
   z-index: 2;
+
+  /* transform: translateY(-200%);
+  transition: all .6s ease-in-out; */
 }
 
 .modal__contents {
@@ -80,6 +85,7 @@ body {
   padding: 2rem 4rem;
   border-radius: 1rem;
   text-align: center;
+  animation: fadeIn linear 0.5s;
 }
 
 .modal--hidden {
@@ -93,6 +99,41 @@ body {
   margin-top: -1rem;
   cursor: pointer;
 }
+
+/* fade in effect to apply to the modal when the 'add book btn' is clicked */
+.fade-in {
+	-webkit-animation: fade-in 1s ease-out both;
+	        animation: fade-in 1s ease-out both;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-out {
+	-webkit-animation: fade-out 1s ease-out both;
+	        animation: fade-out 1s ease-out both;
+}
+ @-webkit-keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
 
 .sub-button {
   width: 100%;
@@ -176,8 +217,9 @@ body {
       margin-top: -6rem;
     }
     .modal{
-      top: 99%;
-      margin-top: 50%;
+      top: 65%;
+      
+      transform: translate(0%, -50%);
     }
   }
   @media screen and (max-width: 56.25rem) {
@@ -203,11 +245,28 @@ body {
       margin-right: 12%;
       margin-left: 4%;
     } 
-    .modal{
+   
+#overlay-back {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: -100%;
+  right: -100%;
+  left: -100%;
+
+  background: rgb(15, 15, 15);
+  opacity: 0.8;
+  filter: alpha(opacity=60);
+  display: none;
+  z-index: 1;
+  visibility: visible;
+  transition: background-color 1s;
+}
+    /* .modal{
       top: 75%;
       left: 100%;
       transform: translate(-98%, -90%);
-    }
+    } */
   }
 
 

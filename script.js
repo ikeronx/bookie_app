@@ -2,11 +2,14 @@ const $title = document.getElementById('title');
 const $author = document.getElementById('author');
 const $pages = document.getElementById('pages');
 const $read = document.getElementById('read');
+const modal = document.querySelector('.modal');
+const modalCloseBar = document.querySelector('.modal__close-bar');
 const backgroundFade = document.getElementById('overlay-back');
 const addBookBtn = document.querySelector('.add-book-btn');
 const modalHeader = document.querySelector('.modal__header');
 const submitBtn = document.querySelector('.submit-btn');
 const saveBtn = document.querySelector('.save-btn');
+const xModalClose = document.querySelector('.x-modal__close');
 
 // book class: represents a book
 class Book {
@@ -130,7 +133,7 @@ function createBook(item) {
 
         // opens modal form to update book info
         updateBtn.addEventListener('click', () => {
-                document.querySelector('.modal').classList.remove('modal--hidden');
+                modal.classList.remove('modal--hidden');
                 showBackgroundFade();
                 modalHeader.textContent = 'Edit Book';
                 submitBtn.style.display = 'none';
@@ -171,6 +174,28 @@ function createBook(item) {
         bookShelf.appendChild(bookDiv);
 }
 
+
+// hides modal & removes background fade
+function removeModal(e) {
+        if (e.target === xModalClose) {
+                modal.classList.add('fade-out');
+                setTimeout(() => {
+                        modal.classList.remove('fade-out');
+                        modal.classList.add('modal--hidden');
+                        removeBackgroundFade();
+                       
+                }, 900);
+
+                if (modal.classList.contains('fade-in')) {
+                        modal.classList.remove('fade-in');
+                }
+                submitBtn.style.display = 'inline-block';
+               
+              clearForm();
+        }
+}
+xModalClose.addEventListener('click', removeModal);
+
 // adds background fade to modal window
 function showBackgroundFade() {
         backgroundFade.style.display = 'block';
@@ -181,23 +206,50 @@ function showBackgroundFade() {
 const removeBackgroundFade = () => {
         backgroundFade.style.display = 'none';
         backgroundFade.style.transition = 'none';
+        document.querySelector('#overlay-back').style.display = 'none';
 };
 
 // hides modal & removes background fade
-const removeModal = () => {
-        document.querySelector('.modal__close-bar span').addEventListener('click', () => {
-                document.querySelector('.modal').classList.add('modal--hidden');
-                submitBtn.style.display = 'inline-block';
-                removeBackgroundFade();
-                clearForm();
-        });
-};
-removeModal();
+// const removeModal = () => {
+//         // document.querySelector('.modal__close-bar span').addEventListener('click', () => {
+//                 outsideClick();
+               
+               
+                // outsideClick();
+
+                // modal.classList.add('fade-out');
+                // setTimeout(() => {
+                //         modal.style.display = 'none';
+                //         modal.classList.remove('fade-out');
+                // }, 300);
+
+                // if (modal.classList.contains('fade-in')) {
+                //         modal.classList.remove('fade-in');
+                // }
+                // modal.classList.add('modal--hidden');
+
+//                 submitBtn.style.display = 'inline-block';
+//                 removeBackgroundFade();
+//                 clearForm();
+        
+// };
+
+// removeModal();
 
 // add book button - modal with form pops up to add a new book to the library array and saves it to local storage again with new info from user input in the form fields in the modal window and closes the modal window after submission of the form fields in the modal window
 addBookBtn.addEventListener('click', () => {
-        document.querySelector('.modal').classList.remove('modal--hidden');
-        showBackgroundFade();
+        setTimeout(() => {
+
+                modal.classList.remove('modal--hidden');
+        modal.classList.add('fade-in');
+                //         modal.style.display = 'none';
+                        // modal.classList.remove('fade-out');
+                 }, 100);
+
+                //  modal.classList.remove('fade-out');
+
+        
+                showBackgroundFade() 
         modalHeader.textContent = 'Enter Book Info';
         submitBtn.style.display = 'inline-block';
         saveBtn.style.display = 'none';
@@ -209,7 +261,7 @@ submitBtn.addEventListener('click', () => {
         render();
         clearForm();
         removeBackgroundFade();
-        document.querySelector('.modal').classList.add('modal--hidden');
+        modal.classList.add('modal--hidden');
 });
 
 // saves the updated user input on click and closes modal
@@ -220,7 +272,7 @@ saveBtn.addEventListener('click', () => {
         addBookToLibrary();
         setData();
         render();
-        document.querySelector('.modal').classList.add('modal--hidden');
+        modal.classList.add('modal--hidden');
         removeBackgroundFade();
         clearForm();
 });
