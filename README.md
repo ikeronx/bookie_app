@@ -56,7 +56,7 @@ I also wanted to experiment with DOM manipulation, and practice creating my own 
 * A button to handle the read status of the book
 * A update button so users can update or edit the the book's info.
 * A remove button so users can delete books.
-* LocalStorage, books are stored on the user's web browser so the user will still have access to the books even they close the browser or reload the webpage.
+* Local storage, via the web storage API, books stored on the browser can be accessed by users after they close the browser or reload the webpage. 
 
 
 
