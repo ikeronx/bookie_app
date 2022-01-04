@@ -35,9 +35,8 @@ let myLibrary = [
 function addBookToLibrary() {
         const newBook = new Book($title.value, $author.value, $pages.value, $read.value);
         myLibrary.push(newBook);
-        // books in localStorage should be updated here as well as in render() function above
         setData();
-        render();
+       
 }
 
 // clears form after book submission
