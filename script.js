@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 const $title = document.getElementById('title');
 const $author = document.getElementById('author');
 const $pages = document.getElementById('pages');
@@ -36,7 +37,6 @@ function addBookToLibrary() {
         const newBook = new Book($title.value, $author.value, $pages.value, $read.value);
         myLibrary.push(newBook);
         setData();
-       
 }
 
 // clears form after book submission
@@ -132,7 +132,10 @@ function createBook(item) {
 
         // opens modal form to update book info
         updateBtn.addEventListener('click', () => {
-                modal.classList.remove('modal--hidden');
+                setTimeout(() => {
+                        modal.classList.remove('modal--hidden');
+                        modal.classList.add('fade-in');
+                }, 100);
                 // eslint-disable-next-line no-use-before-define
                 showOverlay();
                 modalHeader.textContent = 'Edit Book';
@@ -218,23 +221,31 @@ addBookBtn.addEventListener('click', () => {
 
 // submit btn
 submitBtn.addEventListener('click', () => {
+        modal.classList.add('fade-out');
+        setTimeout(() => {
+                modal.classList.remove('fade-out');
+                modal.classList.add('modal--hidden');
+                removeOverlay();
+        }, 900);
         addBookToLibrary();
         render();
         clearForm();
-        removeOverlay();
-        modal.classList.add('modal--hidden');
 });
 
 // saves the updated user input on click and closes modal
 saveBtn.addEventListener('click', () => {
         // removes the book from the library array and adds the updated book to the library array and saves it to local storage again with updated info from user input in the form fields in the modal window and closes the modal window after submission of the form fields in the modal window
         // findIndex
+        modal.classList.add('fade-out');
+        setTimeout(() => {
+                modal.classList.remove('fade-out');
+                modal.classList.add('modal--hidden');
+                removeOverlay();
+        }, 900);
         myLibrary.splice(myLibrary.indexOf(0), 1);
         addBookToLibrary();
         setData();
         render();
-        modal.classList.add('modal--hidden');
-        removeOverlay();
         clearForm();
 });
 
