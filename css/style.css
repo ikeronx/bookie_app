@@ -190,7 +190,7 @@ body {
 
 /*background fade*/
 
-#overlay-back {
+.overlay{
   position: absolute;
   top: 0px;
   left: 0px;
