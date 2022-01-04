@@ -10,6 +10,7 @@ const modalHeader = document.querySelector('.modal__header');
 const submitBtn = document.querySelector('.submit-btn');
 const saveBtn = document.querySelector('.save-btn');
 const xModalClose = document.querySelector('.x-modal__close');
+const errorMsg = document.querySelector('.modal__error-msg');
 
 // book class: represents a book
 class Book {
@@ -191,7 +192,7 @@ const removeOverlay = () => {
 };
 
 // hides modal & removes background fade
-function removeModal(e) {
+function removeModal() {
         modal.classList.add('fade-out');
         setTimeout(() => {
                 modal.classList.remove('fade-out');
@@ -205,7 +206,10 @@ function removeModal(e) {
         submitBtn.style.display = 'inline-block';
         clearForm();
 }
+// removes modal by click outside of modal window or by clicking on 'X' button in modal window
 xModalClose.addEventListener('click', removeModal);
+overlay.addEventListener('click', removeModal);
+
 
 // add book button - modal with form pops up to add a new book to the library array and saves it to local storage again with new info from user input in the form fields in the modal window and closes the modal window after submission of the form fields in the modal window
 addBookBtn.addEventListener('click', () => {
@@ -220,33 +224,44 @@ addBookBtn.addEventListener('click', () => {
 });
 
 // submit btn
-submitBtn.addEventListener('click', () => {
-        modal.classList.add('fade-out');
-        setTimeout(() => {
-                modal.classList.remove('fade-out');
-                modal.classList.add('modal--hidden');
-                removeOverlay();
-        }, 900);
-        addBookToLibrary();
-        render();
-        clearForm();
+submitBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        // checks if user input is empty and if so, alerts user to fill out all fields in the form
+        if ($title.value === '' || $author.value === '' || $pages.value === '') {
+                errorMsg.style.display = 'block';
+                errorMsg.textContent = 'Please fill out all fields';
+                // removes error message after 3 seconds
+                setTimeout(() => {
+                        errorMsg.style.display = 'none';
+                }, 3000);
+        } else {
+                addBookToLibrary();
+                setData();
+                render();
+                removeModal();
+        }
 });
 
 // saves the updated user input on click and closes modal
-saveBtn.addEventListener('click', () => {
+saveBtn.addEventListener('click', (e) => {
+        e.preventDefault();
         // removes the book from the library array and adds the updated book to the library array and saves it to local storage again with updated info from user input in the form fields in the modal window and closes the modal window after submission of the form fields in the modal window
         // findIndex
-        modal.classList.add('fade-out');
-        setTimeout(() => {
-                modal.classList.remove('fade-out');
-                modal.classList.add('modal--hidden');
-                removeOverlay();
-        }, 900);
-        myLibrary.splice(myLibrary.indexOf(0), 1);
-        addBookToLibrary();
-        setData();
-        render();
-        clearForm();
+        if ($title.value === '' || $author.value === '' || $pages.value === '') {
+                errorMsg.style.display = 'block';
+                errorMsg.textContent = 'Please fill out all fields';
+                // removes error message after 3 seconds
+                setTimeout(() => {
+                        errorMsg.style.display = 'none';
+                }, 3000);
+        } else {
+                myLibrary.splice(myLibrary.indexOf(0), 1);
+                addBookToLibrary();
+                setData();
+                render();
+                clearForm();
+                removeModal();
+        }
 });
 
 // sets books in myLibrary array to be stored in local storage

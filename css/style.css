@@ -103,7 +103,7 @@ body {
 /* fade in effect to apply to the modal when the 'add book btn' is clicked */
 .fade-in {
 	-webkit-animation: fade-in 1s ease-out both;
-	        animation: fade-in 1s ease-out both;
+	animation: fade-in 1s ease-out both;
 }
 @keyframes fade-in {
   0% {
@@ -116,7 +116,7 @@ body {
 
 .fade-out {
 	-webkit-animation: fade-out 1s ease-out both;
-	        animation: fade-out 1s ease-out both;
+  animation: fade-out 1s ease-out both;
 }
  @-webkit-keyframes fade-out {
     0% {
@@ -187,9 +187,17 @@ body {
 .pages{
   font-size: .9rem;
 }
-
+ .modal__error-msg {
+  color: red;
+  font-size: 1.1rem;
+  margin-top: -1rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  margin-top: 2rem;
+  text-align: center;
+  display: none;
+ }
 /*background fade*/
-
 .overlay{
   position: absolute;
   top: 0px;
@@ -206,6 +214,7 @@ body {
   visibility: visible;
   transition: background-color 1s;
 }
+
   
  /* make addBookBtn mobile responsive each time the window is resized to make sure it is always visible */
 
