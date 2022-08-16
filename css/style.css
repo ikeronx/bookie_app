@@ -10,7 +10,7 @@
 body {
   background-color:  #141516;
     background-image:  
-    linear-gradient(to bottom,  #000000, rgba(73, 73, 73, 0.7)), 
+    linear-gradient(to bottom,  #000000, rgba(55, 55, 55, 0.8)), 
     url(https://images.unsplash.com/photo-1531072901881-d644216d4bf9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2671&q=80); 
     background-size: cover;
     background-repeat: no-repeat;
