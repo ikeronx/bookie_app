@@ -25,10 +25,10 @@ class Book {
 // test data - books created using the Book class above and added to myLibrary array
 let myLibrary = [
         {
-                title: 'Grit',
-                author: 'Angela Duckworth',
+                title: 'To Kill a Mockingbird',
+                author: 'Harper Lee',
                 read: 'read',
-                pages: 277,
+                pages: 336,
         },
         { title: 'Atomic Habits', author: 'James Clear', read: 'not read', pages: 32 },
 ];
